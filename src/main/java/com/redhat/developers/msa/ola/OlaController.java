@@ -39,7 +39,7 @@ import io.swagger.annotations.ApiOperation;
 @RequestMapping("/api")
 public class OlaController {
 
-    @Autowired
+    /*@Autowired
     private HolaService holaService;
 
     @CrossOrigin
@@ -81,5 +81,5 @@ public class OlaController {
     @ApiOperation("Used to verify the health of the service")
     public String health() {
         return "I'm ok";
-    }
+    }*/
 }
