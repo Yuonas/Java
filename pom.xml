@@ -2,11 +2,11 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>net.lampetty</groupId>
-    <artifactId>war-jar-sample</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <groupId>sparkjava-hello-world</groupId>
+	<artifactId>sparkjava-hello-world</artifactId>
+	<version>1.0</version>
     <packaging>war</packaging>
-    <name>war-jar-sample</name>
+    <name>hello-world</name>
     <url>http://blogger.lampetty.net/</url>
 
     <properties>
@@ -15,7 +15,7 @@
     </properties>
 
     <build>
-        <finalName>war-jar-sample</finalName>
+        <finalName>hello-world</finalName>
         <sourceDirectory>src/main/java</sourceDirectory>
         <resources>
             <resource>
@@ -88,7 +88,7 @@
 		  <manifest>
 		    <addClasspath>true</addClasspath>
 		    <classpathPrefix>lib/</classpathPrefix>
-		    <mainClass>net.lampetty.war_jar_sample.controller.HelloWorld</mainClass>
+		    <mainClass>HelloWorld</mainClass>
 		  </manifest>
 		</archive>
 	      </configuration>
@@ -130,6 +130,26 @@
                     </execution>
                 </executions>
             </plugin>
+		<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-enforcer-plugin</artifactId>
+				<version>1.3.1</version>
+				<executions>
+					<execution>
+						<id>enforce-java</id>
+						<goals>
+							<goal>enforce</goal>
+						</goals>
+						<configuration>
+							<rules>
+								<requireJavaVersion>
+									<version>[1.8,)</version>
+								</requireJavaVersion>
+							</rules>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
         </plugins>
     </build>
 
